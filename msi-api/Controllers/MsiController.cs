@@ -5,16 +5,20 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using msi_api.Models;
+using System.Web.Http.Cors;
 
 namespace msi_api.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MsiController : ApiController
     {
-        public void Post([FromBody] Name name)
+        public void Post([FromBody] MsiPayload payload)
         {
-            using(msiContext entities = new msiContext())
+           using(msiContext entities = new msiContext())
             {
-                entities.Name.Add(name);
+                var name = payload.getName();
+                entities.Name.Add(payload.getName());
+                name.Address.Add(payload.getAddress());
                 entities.SaveChanges();
             }
         }

@@ -10,7 +10,7 @@ namespace msi_api.Models
     { 
         [Key]
         public int AddressId { get; set; }
-        public int Street { get; set; }
+        public string Street { get; set; }
         public string Direction { get; set; }
         public string StreetName { get; set; }
         public string StreetType { get; set; }

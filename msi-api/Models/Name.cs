@@ -21,4 +21,5 @@ namespace msi_api.Models
             this.Address = new HashSet<Address>();
         }
     }
+
 }
