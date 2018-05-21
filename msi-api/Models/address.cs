@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace msi_api.Models
 {
     public class Address
-    {
+    { 
+        [Key]
         public int AddressId { get; set; }
         public int Street { get; set; }
         public string Direction { get; set; }
@@ -15,5 +17,12 @@ namespace msi_api.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
+
+        public ICollection<Name> Name { get; set; }
+
+        public Address()
+        {
+            this.Name = new HashSet<Name>();
+        }
     }
 }

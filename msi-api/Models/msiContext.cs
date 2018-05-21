@@ -6,9 +6,13 @@ using System.Data.Entity;
 
 namespace msi_api.Models
 {
-    public class msiContext: DbContext
+    public class msiContext : DbContext
     {
-        public DbSet<Name> Names { get; set; }
-        public DbSet<Address> Addresses { get; set; }
+        public msiContext() : base()
+        {
+
+        }
+        public DbSet<Name> Name { get; set; }
+        public DbSet<Address> Address { get; set; }
     }
 }
