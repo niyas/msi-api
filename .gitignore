@@ -13,16 +13,27 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+msi-api/[Dd]ebug/
+msi-api/[Dd]ebugPublic/
+msi-api/[Rr]elease/
+msi-api/[Rr]eleases/
+msi-api/x64/
+msi-api/x86/
+msi-api/bld/
+msi-api/[Bb]in/
+msi-api/[Oo]bj/
+msi-api/[Ll]og/
+
+msi-api.Tests/[Dd]ebug/
+msi-api.Tests/[Dd]ebugPublic/
+msi-api.Tests/[Rr]elease/
+msi-api.Tests/[Rr]eleases/
+msi-api.Tests/x64/
+msi-api.Tests/x86/
+msi-api.Tests/bld/
+msi-api.Tests/[Bb]in/
+msi-api.Tests/[Oo]bj/
+msi-api.Tests/[Ll]og/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -180,7 +191,7 @@ PublishScripts/
 # NuGet Packages
 *.nupkg
 # The packages folder can be ignored because of Package Restore
-**/[Pp]ackages/*
+[Pp]ackages/
 # except build/, which is used as an MSBuild target.
 !**/[Pp]ackages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
