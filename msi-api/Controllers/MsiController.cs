@@ -12,14 +12,15 @@ namespace msi_api.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MsiController : ApiController
     {
-        public void Post([FromBody] MsiPayload payload)
+        public HttpResponseMessage Post(HttpRequestMessage request, [FromBody] MsiPayload payload)
         {
            using(msiContext entities = new msiContext())
             {
                 var name = payload.getName();
-                entities.Name.Add(payload.getName());
+                entities.Name.Add(name);
                 name.Address.Add(payload.getAddress());
                 entities.SaveChanges();
+                return Request.CreateResponse(HttpStatusCode.OK, "{Message: Msi Data Saved successfully}");
             }
         }
     }

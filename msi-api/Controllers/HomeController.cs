@@ -14,11 +14,7 @@ namespace msi_api.Controllers
             ViewBag.Title = "Home Page";
             using(msiContext entities = new msiContext())
             {
-                var name = new Name() { FirstName = "Mohammed Niyas", LastName = "Nizamudheen" };
-                var address = new Address() { City = "Chennai", State = "Tamil Nadu" };
-                entities.Name.Add(name);
-                name.Address.Add(address);
-                entities.SaveChanges();
+
             }
             
             return View();
