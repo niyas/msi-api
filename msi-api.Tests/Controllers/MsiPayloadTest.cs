@@ -14,7 +14,7 @@ namespace msi_api.Tests.Controllers
             lastName = "Niyas",
             mi = "Mr",
             suffix = "B.E",
-            address = "2345 first cross street",
+            address = "2345 first cross",
             city = "Chennai",
             state = "Tamil Nadu",
             zip = "600077"
@@ -23,9 +23,23 @@ namespace msi_api.Tests.Controllers
         public void getName()
         {
             var name = payload.getName();
-            Assert.Equals(name.FirstName, "Mohammed");
-            Assert.Equals(name.LastName, "Niyas");
-            Assert.Equals(name.Mi, "Mr");           
+            Assert.AreEqual(name.FirstName, "Mohammed");
+            Assert.AreEqual(name.LastName, "Niyas");
+            Assert.AreEqual(name.Mi, "Mr");
+            Assert.AreEqual(name.Suffix, "B.E");
+        }
+
+        [TestMethod]
+        public void getAddress()
+        {
+            var address = payload.getAddress();
+            Assert.AreEqual(address.Street, "2345");
+            Assert.AreEqual(address.Direction, "first");
+            Assert.AreEqual(address.StreetName, "cross");
+            Assert.AreEqual(address.StreetType, null);
+            Assert.AreEqual(address.City, "Chennai");
+            Assert.AreEqual(address.State, "Tamil Nadu");
+            Assert.AreEqual(address.Zip, "600077");
         }
     }
 }
